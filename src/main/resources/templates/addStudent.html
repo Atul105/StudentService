@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Add Student</title>
+<style>
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #f8f9fa;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+form {
+	width: 300px;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	background: #fff;
+}
+
+label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+input[type="text"] {
+	width: 100%;
+	padding: 8px;
+	margin-bottom: 15px;
+	border-radius: 4px;
+	border: 1px solid #aaa;
+}
+
+button {
+	padding: 10px 15px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Add New Student</h1>
+		<form th:action="@{/addStudentForm}" th:object="${student}"
+			method="post">
+			<label for="name">Name:</label> <input type="text" th:field="*{name}"
+				id="name" required /> <label for="division">Division:</label> <input
+				type="text" th:field="*{division}" id="division" required /> <label
+				for="standard">Standard:</label> <input type="text"
+				th:field="*{standard}" id="standard" required />
+
+			<button type="submit">Add Student</button>
+		</form>
+	</div>
+</body>
+</html>

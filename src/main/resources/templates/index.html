@@ -1,0 +1,11 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Students</title>
+</head>
+<body>
+	<h1>All Students</h1>
+	<ul>
+		<li th:each="student : ${students}" th:text="${student.name}"></li>
+	</ul>
+</body>
+</html>
